@@ -1,0 +1,83 @@
+#title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: rgba(72, 101, 247, 0.568);
+    
+}
+
+#sub_title {
+    align-items: center;
+    font-family: Lobster, sans-serif;
+    font-weight: 200;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    margin: 1.2rem;
+    color: rgba(3, 20, 103, 0.959);
+}
+
+#title::before, #title::after {
+    content: "";
+    height: 2px;
+    background-color: rgba(72, 101, 247, 0.568);
+    display: block;
+    width: 80px;
+}
+
+#title::before {
+    margin-left: 8rem;
+}
+
+input,select {
+    width: 100%; 
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+p{ 
+    text-align:center;
+    /* color:red; */
+}
+
+#btn {
+    border: 2px solid #0880ff;  
+    color: white;  
+    position: relative;  
+    padding: 10px 20px;  
+    margin-right: 24px; 
+    transition: all 75ms ease-in; 
+    background-color: #0880ff; 
+    border-radius: 26px;
+    margin-bottom: 5rem;
+    
+}
+
+#btn:hover {
+    border: 2px solid #204f82c6;
+    background-color: #204f82c6;
+    color: white;
+}
+
+form{
+    padding: auto;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    #title{
+        margin-left: -3rem;
+    }
+
+    input,select{
+        width: 80%; 
+        padding: 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+    }
+    
+}

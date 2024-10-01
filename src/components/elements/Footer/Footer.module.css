@@ -1,0 +1,121 @@
+.container {
+    padding: 2.5rem;
+    background-color: #5e658d;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 0 2rem 0;
+}
+
+.social_media p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Edu TAS Beginner', cursive;
+}
+
+.footer_icons {
+    display: flex;
+}
+
+.footer_icon {
+    margin: 0 0.5rem;
+    background-color: #5e658d;
+    border: 1.5px solid #c9ada7;
+    padding: 0.65rem;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    color: #c9ada7;
+    text-align: center;
+
+}
+
+.footer_icon:hover svg, .footer_icon:hover {
+    background-color: #bf95b6;
+    color: white;
+    border: 1.5px solid #bf95b6;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.contact h2, .links h3, .experience h3 {
+    font-size: 2.5rem;
+    color: #bf95b6;
+    font-weight: 600;
+    font-family: 'Edu TAS Beginner', cursive;
+    margin-bottom: 1rem;
+    letter-spacing: 1.2px;
+}
+
+.email h3, .email a, .phno h3, .phno p, .links p {
+    color: white;
+    margin: 1rem 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+}
+
+.email h3, .phno h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-family: 'Edu TAS Beginner', cursive;
+}
+
+.email a {
+    text-decoration: none;
+}
+
+.email a:hover {
+    text-decoration: underline;
+}
+
+.email a, .phno p, .links p {
+    margin-left: 1.5rem;
+    font-size: 1.15rem;
+    letter-spacing: 1.2px;
+}
+
+.email svg, .phno svg {
+    color: #bf95b6;
+}
+
+.links p:hover {
+    cursor: pointer;
+}
+
+.experience button {
+    background-color: #bf95b6;
+    padding: 1rem 2rem;
+    font-size: 1.35rem;
+    margin: 1rem 0;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 27px;
+    letter-spacing: 1.3px;
+    
+}
+
+.copyrights {
+    border-top: 1px solid #bf95b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyrights h3 {
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 500;
+    padding: 2rem 0 0 0;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1.2px;
+}
+
+.copyrights span {
+    color: #bf95b6;
+}

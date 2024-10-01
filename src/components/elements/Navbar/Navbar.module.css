@@ -1,0 +1,184 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    color: white;
+    z-index: 999;
+}
+
+.navbar {
+    font-weight: 400;
+    position: relative;
+    top: 0%;
+}
+
+.navbar h3 {
+    flex: 2;
+}
+
+.space {
+    flex: 2;
+}
+
+nav a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin: 0 2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.35rem;
+    color: black;
+}
+
+nav a:hover {
+    color: #7678ed;
+    transition: all 0.5s;
+}
+
+header .nav_btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    outline: none;
+    color: black;
+    opacity: 0;
+    display: none;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.nav_btn p {
+    background-color: white;
+    display: flex;
+    font-weight: 200;
+}
+
+.navbar h3 {
+    display: flex;
+}
+
+.nav_logo {
+    object-fit: contain;
+    cursor: pointer;
+    height: 5rem;
+    width: 6rem;
+    align-self: center;
+}
+
+.nav_close {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    nav a {
+        margin: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header .nav_btn {
+        display: inline;
+        opacity: 1;
+    }
+
+    header nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        background: white;
+        transition: 0.5s;
+    }
+
+    header .responsive_nav {
+        transform: translateY(100vh);
+    }
+
+    nav .nav_close {
+        padding: 5px 10px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid grey;
+        border-radius: 10px;
+        outline: none;
+        color: black;
+        display: inline;
+        font-size: 1.8rem;
+        font-weight: 300;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .nav_close p {
+        display: flex;
+    }
+
+    nav a {
+        color: black;
+        font-size: 2rem;
+    }
+}
+
+/* @media only screen and (max-width: 480px) {
+    header .nav_btn {
+        display: inline;
+        opacity: 1;
+    }
+
+    header nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.0rem;
+        background: rgb(248, 246, 246);
+        transition: 0.5s;
+    }
+
+    header .responsive_nav {
+        transform: translateY(70vh);
+    }
+
+    nav .nav_close {
+        padding: 3px 2px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid grey;
+        border-radius: 10px;
+        outline: none;
+        color: black;
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: 300;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .nav_close p {
+        display: flex;
+    }
+
+    nav a {
+        color: black;
+        font-size: 1.6rem;
+    }
+} */

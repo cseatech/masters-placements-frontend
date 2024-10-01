@@ -1,0 +1,82 @@
+.container {
+    padding: 0 2rem 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 50%;
+}
+
+.header {
+    padding-bottom: 2rem;
+}
+
+.header h3 {
+    font-family: 'Edu TAS Beginner', cursive;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.acc_title {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.acc_title p {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #7678ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acc_title p span {
+    display: inline-block;
+    width: 5rem;
+    height: 2px;
+    background-color: #7678ed;
+}
+
+.label {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.65rem;
+}
+
+.label:hover {
+    color: #7678ed;
+    transition: all 200ms;
+}
+
+.label p {
+    font-size: 1.1rem;
+}
+
+.label p:nth-child(2) svg {
+    background-color: #7678ed;
+    color: white;
+}
+
+.card {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.content {
+    padding: 0.65rem;
+    color: #000000b0;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    line-height: 25px;
+}
