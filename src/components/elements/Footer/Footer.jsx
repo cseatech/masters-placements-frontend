@@ -40,8 +40,7 @@ function Footer() {
                 <div className={styles.links}>
                     <h3>Quick Links</h3>
                     {footerCards.footerLinks.map((link, index) => (
-                        <p key={index} onClick={() => window.scrollTo({
-                                top:0,behavior:"smooth"})}><IoIosArrowForward />&nbsp;{link.name}</p>
+                        <p key={index} onClick={() =>{ navigate(`/${link.link}`)}}><IoIosArrowForward />&nbsp;{link.name}</p>
                     ))}
                 </div>
                 <div className={styles.experience}>

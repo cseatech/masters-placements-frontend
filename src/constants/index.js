@@ -52,17 +52,20 @@ export const getStartedCards = [
     {
         title: 'Preparation Tips',
         description: 'The secret to getting ahead is getting started. Placement being a key to unlock your future, it needs both hard and smart work to be shown in preparation. To give you an edge, here are some guidelines to prepare you for the big day!',
-        image: Prepartion
+        image: Prepartion,
+        link: "preparation"
     },
     {
         title: 'Interview Experience',
         description: "Placement being the most crucial juncture of one's life, makes the transformation from being a student to being professional. Hence to help you get started, the experiences of several seniors placed in top companies are listed in order to pave the way for your success journey.",
-        image: InterviewLogo
+        image: InterviewLogo,
+        link: "experience"
     },
     {
         title: 'Give your Experience',
         description: 'Experience, when shared with others, has a greater impact. Shared experiences enable your peers to integrate information and empower them to own their ideas. Do you want to keep the learning alive and encourage future growth?',
-        image: Expereince
+        image: Expereince,
+        link: "post"
     },
 ];
 
@@ -101,7 +104,7 @@ export const footerCards = {
     ],
     footerLinks: [
         { name: 'About Us', link: 'about' },
-        { name: 'Preparation Tips', link: 'tips' },
+        { name: 'Preparation Tips', link: 'preparation' },
         { name: 'Interview Expereince', link: 'experience' },
         { name: 'FAQ', link: 'faq' },
     ]

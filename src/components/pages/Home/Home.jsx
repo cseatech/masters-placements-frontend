@@ -5,6 +5,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { getStartedCards, PracticeCards, designersCards } from '../../../constants';
 import { Footer, Accordion } from '../../elements';
 import { Interview, CSEALogo } from '../../../assets';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -43,13 +44,14 @@ const About = () => {
           <li><TiTick /><span>We Learn</span></li>
           <li><TiTick /><span>We Teach</span></li>
         </ul>
-        <button>Learn More</button>
+        <a href="https:/cseaceg.org.in"><button>Learn More</button></a>
       </div>
     </div>
   );
 }
 
 const GetStarted = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.getStarted_container}>
       <div className={styles.getStarted_titles}>
@@ -68,7 +70,7 @@ const GetStarted = () => {
               <h3>{card.title}</h3>
               <p>{card.description}</p>
               <div lassName={styles.getStarted_card_btn}>
-                <button>Explore</button>
+                <button onClick={()=>{navigate(`/${card.link}`)}}>Explore</button>
               </div>
             </div>
           </motion.div>
