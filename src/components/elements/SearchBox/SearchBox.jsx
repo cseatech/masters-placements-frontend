@@ -6,7 +6,7 @@ import useGetCompanies from "../../../Hooks/useGetCompanies";
 import useCompany from "../../../zustand/useCompany";
 
 const SearchBox = () => {
-    const {search,setSearch} = useState("");
+    const [search,setSearch] = useState("");
     // const {loading,setGetFiles} = useGetFiles();
     const {setSelectedCompany} = useCompany();
     const {companiesName} = useGetCompanies();
@@ -19,7 +19,7 @@ const SearchBox = () => {
         const searchCompany = companiesName.find(
             (company)=>company.toLowerCase().includes(search.toLowerCase())
         );
-
+        console.log(searchCompany, "dskgjkl")
         if(!searchCompany) return;
         else{
             setSelectedCompany(searchCompany);

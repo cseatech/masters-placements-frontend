@@ -21,7 +21,7 @@ function Navbar() {
             </h3>
             <nav ref={navRef}>
                 {navLinks.map((link) => ( 
-                    <Link to={`${link.id}`}>{link.title} </Link>
+                    <Link to={`/${link.id}`}>{link.title} </Link>
                 ))}
                 <button onClick={showNavBar} className={styles.nav_close}>
                     <p><AiOutlineClose /></p>

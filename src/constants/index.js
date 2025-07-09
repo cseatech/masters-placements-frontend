@@ -99,8 +99,8 @@ export const footerCards = {
         { name: 'Linkedin', link: 'https://www.linkedin.com/company/csea-ceg/mycompany/', icon: FaLinkedinIn }
     ],
     footerGetInTouch: [
-        { name: 'Saran T', phno: '+91 96005 44132' },
-        { name: 'Sruthi Murali', phno: '+91 80562 84967' },
+        { name: 'Sunil Kumar S', phno: '+91 6383 123 505' },
+        { name: 'Smrithi Prakash', phno: '+91 80728 69255' },
     ],
     footerLinks: [
         { name: 'About Us', link: 'about' },
@@ -111,10 +111,10 @@ export const footerCards = {
 }
 
 export const PracticeCards = [
-    { name: 'GeeksForGeeks', image: GFG, link: '' },
-    { name: 'LeetCode', image: Leetcode, link: '' },
-    { name: 'Hackerrank', image: Hackerrank, link: '' },
-    { name: 'CodeChefs', image: CC, link: '' },
+    { name: 'GeeksForGeeks', image: GFG, link: 'https://www.geeksforgeeks.org/' },
+    { name: 'LeetCode', image: Leetcode, link: 'https://leetcode.com/' },
+    { name: 'Hackerrank', image: Hackerrank, link: 'https://www.hackerrank.com/' },
+    { name: 'CodeChefs', image: CC, link: 'https://www.codechef.com/' },
 ];
 
 export const designersCards = [

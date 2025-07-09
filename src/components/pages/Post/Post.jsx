@@ -1,6 +1,7 @@
 import styles from './Post.module.css';
-import { useAuthContext } from '../../../context/AuthContext';
+import { emptyInput, useAuthContext } from '../../../context/AuthContext';
 import useSignup from '../../../Hooks/usePost';
+import { Navbar } from '../../elements';
 
 const Post = () => {
 
@@ -15,17 +16,32 @@ const Post = () => {
         if(!res) return;
 
         await signup(input);
-        
+        setInput(emptyInput);
     }
 
     const handleFile = (e)=>{
-        e.preventDefault();
-        setInput({...input,file:e.target.files[0]});
-        console.log(e.target.files[0]);
+      e.preventDefault();
+      const file = e.target.files[0];
+      if (file && file.type === "application/pdf") {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          // setPdfBase64(reader.result); // This will be data:application/pdf;base64,...
+          const base64PDF = reader.result;
+          setInput({...input,file:base64PDF});
+          console.log(base64PDF);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert("Please upload a valid PDF file.");
+      }
+        
     }
 
     return (
+      <div>
+        <Navbar />
       <div className='flex justify-center items-center'>
+        
         <div className='flex-col items-center mt-16'>
           <div className='text-center mb-4'>
             <h1 id={styles.title} >Connect with us</h1>
@@ -44,6 +60,7 @@ const Post = () => {
               onChange={(e)=>{setInput({...input,email:e.target.value})}}></input>
 
               <select className ='py-2 px-2' onChange={(e)=>{setInput({...input,type:e.target.value})}}>
+                <option value="" disabled selected>Select an employment type</option>
                 <option value='Placement'>Placement</option>
                 <option value='Intern'>Intern</option>
               </select>
@@ -73,6 +90,7 @@ const Post = () => {
           </div>
         </div>
       </div>
+      </div>
     );
   };
   
@@ -100,7 +118,7 @@ function checkError(input){
         alert("Company cannot be empty");
         return false;
     }
-    if(!input.url){
+    if(!input.linkedin){
         alert("LinkedIn URL cannot be empty");
         return false;
     }

@@ -5,19 +5,21 @@ export const useAuthContext = () => {
     return useContext(AuthContext);
 }
 
+export const emptyInput = {
+    name:"",
+    email:"",
+    year:"",
+    company:"",
+    linkedin:"",
+    file:"",
+    type:"",
+};
+
 export const AuthContextProvider = ({children}) => {
+    const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem("admins")) || null)
+    const [input,setInput] = useState(emptyInput);
 
-    const [input,setInput] = useState({
-        name:"",
-        email:"",
-        year:"",
-        company:"",
-        linkedin:"",
-        file:"",
-        type:"",
-    });
-
-    const companies =["All","Google", "Microsoft", "Apple", "Amazon", "Facebook", "Tesla", "Netflix", "Adobe", "IBM", "Intel",
+    const companiess =["All","Google", "Microsoft", "Apple", "Amazon", "Facebook", "Tesla", "Netflix", "Adobe", "IBM", "Intel",
     "Oracle", "Samsung", "Sony", "Nvidia", "Cisco", "Qualcomm", "Salesforce", "PayPal", "Spotify", "Uber",
     "Airbnb", "Dropbox", "Snap", "Zoom", "Slack", "Square", "Twitter", "Pinterest", "eBay", "Alibaba",
     "Tencent", "Baidu", "Hewlett-Packard", "Dell", "Lenovo", "Xiaomi", "Huawei", "ASUS", "LG", "Nokia",
@@ -61,7 +63,7 @@ export const AuthContextProvider = ({children}) => {
         },
     ]
 
-    return <AuthContext.Provider value = {{companies,Experience,input,setInput}}>
+    return <AuthContext.Provider value = {{authUser, setAuthUser, companiess,Experience,input,setInput}}>
         {children}
         </AuthContext.Provider>
 }

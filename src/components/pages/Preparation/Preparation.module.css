@@ -17,15 +17,30 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 10px;
-    position: relative;
-    z-index: 10;
+    width: 100%;
+    /* position: relative;
+    z-index: 10; */
     margin-top: 20px    ;
 }
 
 .stages{
     display: flex;
+    flex: 1;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     margin-top: 20px;
-    width:100%;
+    width: 70%;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.stages::-webkit-scrollbar {
+  display: none;
+}
+.stages {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .steps {
@@ -35,6 +50,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    min-width: 150px; /* or more depending on your design */
+    flex-shrink: 0;   /* prevents shrinking when wrapping */
+    text-align: center;
+    scroll-snap-align: center;
 }
 
 .steps::before {
@@ -150,4 +169,8 @@
         content: "\2713";
         padding-right: 15px;
     }
+}
+
+.nav_arrow {
+  flex-shrink: 0;
 }

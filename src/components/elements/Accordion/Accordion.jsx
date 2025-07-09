@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AccordionCards } from '../../../constants';
-import { GoChevronDown, GoChevronLeft } from 'react-icons/go';
+import { GoChevronDown, GoChevronUp } from 'react-icons/go';
 
 import styles from './Accordion.module.css';
 
@@ -18,7 +18,7 @@ function Accordion() {
 
     const renderedItems = AccordionCards.map((item, index) => {
         const isExpanded = index === expandedIndex;
-        const icon = <p>{isExpanded ? <GoChevronDown /> : <GoChevronLeft />}</p>
+        const icon = <p>{isExpanded ? <GoChevronUp /> : <GoChevronDown />}</p>
 
         return (
             <div key={item.id} className={styles.card}>

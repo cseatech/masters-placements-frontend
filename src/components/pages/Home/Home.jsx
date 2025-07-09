@@ -6,6 +6,7 @@ import { getStartedCards, PracticeCards, designersCards } from '../../../constan
 import { Footer, Accordion } from '../../elements';
 import { Interview, CSEALogo } from '../../../assets';
 import { useNavigate } from 'react-router-dom';
+import { Navbar } from '../../elements'
 
 const Header = () => {
   return (
@@ -87,7 +88,9 @@ const Practice = () => {
       <div className={styles.practiceWrapper}>
         {PracticeCards.map((card, index) => (
           <div key={index} className={styles.practiceTile}>
-            <motion.img src={card.image} alt={card.name} whileHover={{ scale: 1.2 }} />
+            <a href={card.link}>
+              <motion.img src={card.image} alt={card.name} whileHover={{ scale: 1.2 }} />
+            </a>
           </div>
         ))}
       </div>
@@ -102,7 +105,7 @@ const Designers = () => {
         <div className={styles.designers_title}>
           <p><span></span>&nbsp;The team&nbsp;<span></span></p>
         </div>
-        <h3>Designed and Developed by</h3>
+        <h3>Developed by</h3>
       </div>
       <div className={styles.designers_content}>
         {designersCards.map((card, index) => (
@@ -120,6 +123,7 @@ const Designers = () => {
 function Home() {
   return (
     <div>
+      <Navbar />
       <div className={styles.container}>
         <Header />
       </div>

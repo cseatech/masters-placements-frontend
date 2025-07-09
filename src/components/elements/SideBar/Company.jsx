@@ -10,6 +10,7 @@ const Company = ({name}) => {
         ${ isSelected ? "bg-[#0880ff]" : ""}`}
             onClick = {()=>{
                 setSelectedCompany(name);
+                console.log(name);
             }}>
             <p>{name}</p>
         </div>

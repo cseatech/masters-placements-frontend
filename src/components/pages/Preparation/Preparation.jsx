@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './Preparation.module.css';
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+import { Navbar } from '../../elements';
 
 const Preparation = () => {
     const stages = [
@@ -12,6 +13,17 @@ const Preparation = () => {
     ];
 
     const [currentStage, setCurrentStage] = useState(0);
+
+    useEffect(() => {
+        const selectedEl = stageRefs.current[currentStage];
+        if (selectedEl && window.innerWidth <= 768) {
+            selectedEl.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest'
+            });
+        }
+    }, [currentStage]);
 
     const handleNext = () => {
         if (currentStage < stages.length - 1) {
@@ -29,8 +41,11 @@ const Preparation = () => {
         setCurrentStage(index);
     };
 
+    const stageRefs = useRef([]);
+
     return (
         <div className={styles.progressContainer}>
+            <Navbar />
             <div className={styles.timeline}>
                 <div>
                     <button onClick={handlePrev} className={styles.nav_arrow}>
@@ -41,8 +56,9 @@ const Preparation = () => {
                 <div className={styles.stages}>
                     {stages.map((stage, index) => (
                         <div key={index} 
-                             className={`${styles.steps} ${index === currentStage ? styles.currentStep : ''}`}
-                             onClick={() => handleStageClick(index)}>
+                            ref={(el) => (stageRefs.current[index] = el)}
+                            className={`${styles.steps} ${index === currentStage ? styles.currentStep : ''}`}
+                            onClick={() => handleStageClick(index)}>
                             <div id={styles.number}>{index + 1}</div>
                             <p className={styles.stepLabel}>{stage}</p>
                         </div>

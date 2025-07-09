@@ -1,34 +1,38 @@
 import { useEffect, useState } from "react"
-import useCompany from "../zustand/useCompany";
-import useTypes from "../zustand/useTypes";
+// import useCompany from "../zustand/useCompany";
+// import useTypes from "../zustand/useTypes";
 
-const useGetFiles = () => {
+const useGetFiles = (company) => {
     const [loading,setLoading] = useState(false);
-    const {getFiles,setGetFiles} = useState(null);
-    const {selectedCompany} = useCompany();
-    const {selectedType} = useTypes();
-
+    const [files,setFiles] = useState([]);
+    // const {selectedCompany} = useCompany();
+    // const {selectedType} = useTypes();
+    console.log("hk", company)
     useEffect(()=>{
-        const getFiles = async()=> {
+        console.log("eiatkhjk")
+        const getfiles = async()=> {
             setLoading(true);
-    
+            console.log("eughu")
             try{
-                const res = await fetch('');
-                const data = res.json();
+                let url = "http://localhost:5000/api/experiences/all-experiences/";
+                console.log(url)
+                if(company != 'All' && company != null) url = url + company;
+                const res = await fetch(url);
+                const data = await res.json();
                 if(data.error) throw new Error(data.error);
-                setGetFiles(data);
+                setFiles(data.message);
             }catch(error){
                 throw new Error(error);
             }finally{
                 setLoading(false);
             }
         }
+        console.log("eiatkhjk")
+        getfiles();
+        console.log("egihkj")
+    },[company])
 
-        getFiles();
-        
-    },[])
-
-    return {loading,getFiles}
+    return {loading,files}
 }
 
 export default useGetFiles;

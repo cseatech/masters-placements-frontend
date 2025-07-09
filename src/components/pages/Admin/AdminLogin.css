@@ -1,0 +1,40 @@
+
+.input {
+    font-size:15px;
+    padding:20px;
+    height:30px;
+    width: 300px;
+    border: 2px solid black
+}
+
+.title {
+    font-size: 35px;
+    font-weight: bolder;
+    display:flex;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.login-label {
+    display: flex;
+    flex-direction: row;
+    font-size:20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width:50%
+}
+
+.login-btn {
+    background-color: #ffde76;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid black;
+}

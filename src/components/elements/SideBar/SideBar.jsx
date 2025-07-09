@@ -5,22 +5,29 @@ import useCompany from "../../../zustand/useCompany";
 import useTypes from "../../../zustand/useTypes";
 
 import { useEffect } from "react";
+import useGetCompanies from "../../../Hooks/useGetCompanies";
 
 
 const SideBar = () => {
-    const {companies} = useAuthContext();
+    // const [companyList, setCompanyList] = useState([]);
+    // useEffect(() => {
+        
+    // })
+    const {loading, companiesName} = useGetCompanies();
+    const {companiess} = useAuthContext();
     const {setSelectedCompany} = useCompany();
     const {setSelectedType} = useTypes();
 
     useEffect(() => {
-            setSelectedCompany("All");
-            setSelectedType("All");
+        setSelectedCompany("All");
+        setSelectedType("All");
 
     },[setSelectedCompany,setSelectedType]);
 
     return (
         <div className={styles.sidebar}>
-            {companies.map((name,index)=>(
+            <Company key={0} name={'All'} />
+            {companiesName.map((name,index)=>(
                 <div>
                     <Company key={index} name={name} />
                 </div>

@@ -20,6 +20,7 @@
 
 .footer_icons {
     display: flex;
+    justify-content: center;
 }
 
 .footer_icon {
@@ -49,6 +50,8 @@
     font-family: 'Edu TAS Beginner', cursive;
     margin-bottom: 1rem;
     letter-spacing: 1.2px;
+    display: flex;
+    justify-content: center;
 }
 
 .email h3, .email a, .phno h3, .phno p, .links p {
@@ -56,6 +59,7 @@
     margin: 1rem 0;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    justify-content: center;
 }
 
 .email h3, .phno h3 {
@@ -86,6 +90,12 @@
     cursor: pointer;
 }
 
+.experience {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .experience button {
     background-color: #bf95b6;
     padding: 1rem 2rem;
@@ -99,6 +109,7 @@
     letter-spacing: 1.3px;
     
 }
+
 
 .copyrights {
     border-top: 1px solid #bf95b6;
@@ -118,4 +129,10 @@
 
 .copyrights span {
     color: #bf95b6;
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper{
+        flex-direction: column;
+    }
 }

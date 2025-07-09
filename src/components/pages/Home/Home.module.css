@@ -49,8 +49,9 @@
 .about_wrapper {
     width: 100%;
     font-family: 'Nunito', sans-serif;
-    padding: 3.5rem;
     display: flex;
+    padding: 3.5rem;
+    flex-direction: row;
 }
 
 .about_title {
@@ -122,6 +123,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .about_right {
@@ -198,10 +200,11 @@
 .getStarted_cards {
     padding: 4rem;
     display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .getStarted_card {
-    width: 30%;
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
@@ -276,6 +279,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .practiceSection h3 {
@@ -288,11 +292,12 @@
 .practiceTile {
     height: 9rem;
     padding: 1.1em;
-    width: 20%;
+    width: 50%;
     border: 1px solid rgba(128, 128, 128, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .practiceTile img {
@@ -394,6 +399,35 @@
     .header_text h2 {
         font-size: 2rem;
     }
+
+    .about_wrapper {
+        flex-direction: column; /* Stack vertically */
+        padding: 2rem;
+        align-items: center; /* Optional: center items */
+    }
+
+    .getStarted_cards {
+        flex-direction: column; /* Stack vertically */
+        padding: 2rem;
+        align-items: center;
+    }
+
+    .practiceWrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .practiveTile {
+        width: 70%
+    }
+
+    .designers_content {
+        flex-direction: column;
+    }
+
+    .designers_card {
+        width: 70%;
+    }
 }
 
 @media only screen and (max-width: 590px) {
@@ -414,4 +448,8 @@
     .header_text h2 {
         font-size: 1.25rem;
     }
+}
+
+@media (max-width: 768px) {
+  
 }

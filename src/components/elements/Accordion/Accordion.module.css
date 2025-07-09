@@ -80,3 +80,9 @@
     font-family: 'Nunito', sans-serif;
     line-height: 25px;
 }
+
+@media only screen and (max-width: 768px) {
+    .wrapper{
+        width: 90%;
+    }
+}
