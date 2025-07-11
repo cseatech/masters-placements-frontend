@@ -9,7 +9,7 @@ const useGetFiles = (company) => {
         const getfiles = async()=> {
             setLoading(true);
             try{
-                let url = import.meta.env.VITE_APP_SERVER_URL+"/api/experiences/all-experiences/";
+                let url = import.meta.env.VITE_APP_SERVER_URL+"/api/experiences/";
                 if(company != 'All' && company != null) url = url + company;
                 const res = await fetch(url);
                 const data = await res.json();

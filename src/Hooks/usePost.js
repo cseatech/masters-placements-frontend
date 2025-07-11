@@ -10,7 +10,7 @@ const useSignup = ()=>{
             setLoading(true);
 
             try{
-                const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+'/api/experiences/add-experience',{
+                const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+'/api/experiences/new',{
                     method:"POST",
                     headers:{
                         "Content-Type":"application/json"
