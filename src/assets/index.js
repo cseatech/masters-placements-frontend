@@ -10,8 +10,9 @@ import GFG from './images/home/geeksforgeeks.png';
 import CC from './images/home/Codechef.png';
 import Hackerrank from './images/home/hackerrank.png';
 import Leetcode from './svg/LeetCode.svg';
+import EmptyBox from './images/empty.png';
 
 export {
     CSEALogo, CSEA, CSEALogo2, Interview, Prepartion, Leetcode,
-    InterviewLogo, Expereince, GFG, CC, Hackerrank
+    InterviewLogo, Expereince, GFG, CC, Hackerrank, EmptyBox
 }

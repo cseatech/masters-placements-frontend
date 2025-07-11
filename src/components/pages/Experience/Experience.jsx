@@ -6,6 +6,7 @@ import { useAuthContext } from "../../../context/AuthContext";
 import ExperienceCard from "./ExperienceCard";
 import useGetFiles from "../../../Hooks/useGetFiles";
 import useCompany from "../../../zustand/useCompany";
+import { EmptyBox } from "../../../assets";
 
 const Experience = () => {
     const { selectedType, setSelectedType } = useTypes();
@@ -17,7 +18,7 @@ const Experience = () => {
     const dispFiles = (files) => {
         if(files.length == 0) return (
             <div style={{display: 'flex', justifyContent: 'center', width: '100%', height: '400px', alignItems: 'center', flexDirection: 'column', gap: '1rem', paddingTop: '15px'}}>
-                <div style={{height: "160px"}}><img src="src\assets\images\empty.png" className={styles.floating_box} width="200"></img></div>
+                <div style={{height: "160px"}}><img src={EmptyBox} className={styles.floating_box} width="200"></img></div>
                 <div style={{color: 'white'}}>No {selectedType != 'All' && selectedType} experiences available yet!</div>
             </div>
         );
