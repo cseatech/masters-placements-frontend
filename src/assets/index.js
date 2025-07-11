@@ -11,8 +11,8 @@ import CC from './images/home/Codechef.png';
 import Hackerrank from './images/home/hackerrank.png';
 import Leetcode from './svg/LeetCode.svg';
 import EmptyBox from './images/empty.png';
-
+import EmptyBox2 from './images/empty2.png'
 export {
     CSEALogo, CSEA, CSEALogo2, Interview, Prepartion, Leetcode,
-    InterviewLogo, Expereince, GFG, CC, Hackerrank, EmptyBox
+    InterviewLogo, Expereince, GFG, CC, Hackerrank, EmptyBox, EmptyBox2
 }

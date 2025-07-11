@@ -1,40 +1,46 @@
-
 .input {
     font-size:15px;
     padding:20px;
     height:30px;
     width: 300px;
-    border: 2px solid black
+    border: 2px solid black;
+    background-color: #fdfcc7;
 }
 
 .title {
     font-size: 35px;
     font-weight: bolder;
     display:flex;
+    color: #fbc618;
 }
 .login-form {
     display: flex;
     flex-direction: column;
-    width: 100%
+    width: 80vh;
+    /* border: 3px solid #fbc618; */
+    height: 60vh;
 }
 
 .login-label {
     display: flex;
     flex-direction: row;
     font-size:20px;
+    gap: 0.5rem;
 }
 
 .container {
     display: flex;
-    justify-content: center;
-    width:50%
+    justify-content: space-around;
+    background-color: #292d33;
+    height: 100vh;
 }
 
 .login-btn {
-    background-color: #ffde76;
+    background-color: #fbc618;
     padding: 5px 12px;
     border-radius: 5px;
     font-size: 17px;
     font-weight: bold;
-    border: 2px solid black;
+    border: 2px solid #fbc618;
+    color: black;
 }

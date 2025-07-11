@@ -6,10 +6,32 @@
   width: 100%
 }
 
+.logout {
+  background-color: #fbc618;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid #fbc618;
+    color: black;
+}
 /* Stack cards vertically on small screens */
 @media (max-width: 768px) {
   .experience_container {
     flex-direction: column;
     align-items: center;
   }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+.floating_box {
+  animation: float 2s ease-in-out infinite;
 }

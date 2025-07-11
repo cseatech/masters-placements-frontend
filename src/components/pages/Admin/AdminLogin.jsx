@@ -41,11 +41,11 @@ const AdminLogin = () => {
   return (
     <div className='container'>
         <form className='login-form'>
-            <div className="title">AdminLogin<img src="src\assets\images\working.png" width={50}></img></div><br/>
+            <div className="title">AdminLogin&nbsp;</div><br/>
             { error && <div style={{color: 'red'}}>Wrong Credentials</div>}
-            <div className='login-label'><img src="src\assets\images\username.jpg" width={30}></img><label htmlFor="username">Username :</label></div><br/>
+            <div className='login-label'><div style={{ marginTop: '2px', color: '#fbc618'}}><i className="fa-solid fa-user-graduate"></i></div><label htmlFor="username" style={{color: '#fbc618', fontWeight: 'bold'}}>Username :</label></div><br/>
             <input className='input' value={username} onChange={(e) => setUsername(e.target.value)} type="text" id="username" name="username" placeholder='Enter username' style={{width: '300px'}}/><br/><br/>
-            <div className='login-label'><img src="src\assets\images\password.png" width={30}/><label htmlFor="password">Password :</label></div><br/>
+            <div className='login-label'><div style={{ marginTop: '2px', color: '#fbc618'}}><i className="fa-solid fa-lock"></i></div><label htmlFor="password" style={{color: '#fbc618', fontWeight: 'bold'}}>Password :</label></div><br/>
             <input className='input' value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" placeholder='Enter password'/><br/>
             <button className="login-btn" onClick={handleLogin}>Login</button>
         </form>

@@ -3,7 +3,7 @@
 }
 .experience_card{
     width: 300px;
-    padding: 0.5rem 1rem 1rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
     margin: 2rem;
     /* flex: 1 0 20%; */
     border: 1px solid rgba(0, 0, 0, 0.007);
@@ -11,7 +11,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     #student_details{
         align-items: center;
-        padding: 1rem 1rem 1rem 2rem;
+        padding: 0rem 1rem 1rem 1rem;
         ul{
             padding-bottom: 5px;
         }
@@ -56,16 +56,6 @@
     overflow: hidden 
 }
 
-.download_btn {
-    padding: 0.5rem 1rem;
-    background-color: #0880ff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 1rem
-}
-
 .cancel_btn {
     padding: 0.5rem 1rem;
     background-color: #ccc;
@@ -80,11 +70,20 @@
 }
 
 .top_right {
-    padding-top: 1rem; 
     width:10%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     font-size: 1.25rem;
-    gap: 0.75rem;
+    gap: 1rem;
+}
+
+.verify_btn {
+    background-color: #fbc618;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid #fbc618;
+    color: black;
 }

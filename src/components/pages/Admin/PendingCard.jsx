@@ -48,18 +48,18 @@ const PendingCard = ({data}) => {
         <div className={styles.experience_card}>
             <div className={styles.top}>
                 <div id={styles.student_details}>
-                    <ul className="tracking-wider uppercase">{data.name}</ul>
-                    <ul className="">{data.company} ({data.type})</ul>
-                    <ul className="">{data.year}</ul>
+                    <ul className="tracking-wider uppercase text-white font-bold">{data.name}</ul>
+                    <ul className="text-white text-200">{data.company} ({data.type})</ul>
+                    <ul className="text-white">{data.year}</ul>
                 </div>
                 <div className={styles.top_right}>
                     <div onClick={() => deleteFile(data._id)}>
-                        <i class="fa-solid fa-trash" style={{display:"flex", justifyContent: "center", color: 'red', cursor: 'pointer'}}></i>
+                        <i class="fa-solid fa-trash" style={{display:"flex", justifyContent: "center", color: '#fbc618', cursor: 'pointer'}}></i>
                     </div>
-                    <a href={data.linkedinurl} target="_blank" style={{color: "blue",display:"flex", justifyContent: "center"}}>
+                    <a href={data.linkedinurl} target="_blank" style={{color: "#fbc618",display:"flex", justifyContent: "center"}}>
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href={`mailto:${data.email}`} style={{color: "yellow", WebkitTextStroke: "0.5px black",display:"flex", justifyContent: "center"}}>
+                    <a href={`mailto:${data.email}`} style={{color: "#fbc618",display:"flex", justifyContent: "center"}}>
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -67,7 +67,7 @@ const PendingCard = ({data}) => {
             <hr ></hr>
 
             <div id={styles.file_container}>
-                <div className="border-2 border-[#32FF6A] text-[#0880ff] relative px-5 py-2.5 mr-6 transition-all ease-in duration-75 bg-white hover:bg-[#0880ff] hover:text-white rounded-md group-hover:bg-opacity-0" onClick={() => readFile(data.name, data.experienceFile)}>Read Article</div>
+                <div className="border-2 border-[#fbc618] text-[#fbc618] relative px-5 py-2.5 mr-6 transition-all ease-in duration-75 bg-[#292d33] hover:bg-[#f6da7d] hover:text-black rounded-md group-hover:bg-opacity-0" onClick={() => readFile(data.name, data.experienceFile)}>Read Article</div>
                     {pdfModalOpen && (
                         <div className={styles.pdf_bg} onClick={() => setPdfModalOpen(false)}>
                           <div className={styles.pdf_modal} onClick={(e) => e.stopPropagation()}>
@@ -78,7 +78,7 @@ const PendingCard = ({data}) => {
                           </div>
                         </div>
                     )}
-                <button onClick={() => verifyFile(data._id)} className="border-2 bg-green-600 text-white font-bold px-5 py-2.5 rounded-md">Verify</button>
+                <button onClick={() => verifyFile(data._id)} className={styles.verify_btn}>Verify</button>
             </div>
         </div>
     );

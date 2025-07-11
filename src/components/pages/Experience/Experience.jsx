@@ -59,7 +59,7 @@ const Experience = () => {
                 <div className={styles.experience_container}>
                     {loading && (
                         <div style={{display: 'flex', justifyContent: 'center', width: '100%', height: '400px', alignItems: 'center', flexDirection: 'column', gap: '1rem', paddingTop: '15px'}}>
-                            <Loading />
+                            <Loading color='#895c95'/>
                         </div>
                     )}
                     {!loading && selectedType == 'All'? dispFiles(files):''}
