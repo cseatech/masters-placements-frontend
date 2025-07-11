@@ -7,7 +7,7 @@ import ExperienceCard from "./ExperienceCard";
 import useGetFiles from "../../../Hooks/useGetFiles";
 import useCompany from "../../../zustand/useCompany";
 import { EmptyBox } from "../../../assets";
-
+import { Loading } from "../../elements"
 const Experience = () => {
     const { selectedType, setSelectedType } = useTypes();
     const { selectedCompany } = useCompany();
@@ -15,7 +15,7 @@ const Experience = () => {
     const { loading, files } = useGetFiles(selectedCompany);
 
     const dispFiles = (files) => {
-        if(files.length == 0) return (
+        if(!loading && files.length == 0) return (
             <div style={{display: 'flex', justifyContent: 'center', width: '100%', height: '400px', alignItems: 'center', flexDirection: 'column', gap: '1rem', paddingTop: '15px'}}>
                 <div style={{height: "160px"}}><img src={EmptyBox} className={styles.floating_box} width="200"></img></div>
                 <div style={{color: 'white'}}>No {selectedType != 'All' && selectedType} experiences available yet!</div>
@@ -57,9 +57,14 @@ const Experience = () => {
                 
 
                 <div className={styles.experience_container}>
-                    {selectedType == 'All'? dispFiles(files):''}
-                    {selectedType == 'Intern'? dispFiles(files.filter(file => file.type == 'Intern')):''}
-                    {selectedType == 'Placement'? dispFiles(files.filter(file => file.type == 'Placement')):''}
+                    {loading && (
+                        <div style={{display: 'flex', justifyContent: 'center', width: '100%', height: '400px', alignItems: 'center', flexDirection: 'column', gap: '1rem', paddingTop: '15px'}}>
+                            <Loading />
+                        </div>
+                    )}
+                    {!loading && selectedType == 'All'? dispFiles(files):''}
+                    {!loading && selectedType == 'Intern'? dispFiles(files.filter(file => file.type == 'Intern')):''}
+                    {!loading && selectedType == 'Placement'? dispFiles(files.filter(file => file.type == 'Placement')):''}
                 </div>
             </div> 
             </div>

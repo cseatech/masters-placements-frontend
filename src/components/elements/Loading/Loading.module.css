@@ -1,0 +1,52 @@
+.clock_loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 6px solid #895c95;
+  border-radius: 50%;
+  background: #292d33;
+  /* box-shadow: 0 0 25px #6a1b9a80; */
+  margin: 50px auto;
+}
+
+.minute {
+  width: 4px;
+  height: 45%;
+  background-color: white;
+  animation: spin-min 1s linear infinite;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 2px;
+}
+
+.hour {
+  width: 6px;
+  height: 30%;
+  background-color: #ffffff;
+  animation: spin-hour 3s linear infinite;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 2px;
+}
+
+@keyframes spin-min {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes spin-hour {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
