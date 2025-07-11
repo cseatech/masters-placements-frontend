@@ -44,7 +44,6 @@ const PendingCard = ({data}) => {
         setPdfModalOpen(true);
       }
     }
-    console.log(data)
     return (
         <div className={styles.experience_card}>
             <div className={styles.top}>

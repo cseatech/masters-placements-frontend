@@ -120,7 +120,6 @@ const Designers = () => {
 }
 
 function Home() {
-  console.log(window.location.pathname);
   return (
     <div>
       <Navbar />

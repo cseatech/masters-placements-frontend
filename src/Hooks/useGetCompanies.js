@@ -13,7 +13,6 @@ const useGetCompanies = () => {
                 const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+'/api/experiences/companies');
 
                 const data = await res.json();
-                console.log(data);
                 if(data.error) throw new Error(data.error);
 
                 setCompaniesName(data.message);

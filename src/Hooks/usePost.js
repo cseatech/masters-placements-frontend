@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { Alert } from "antd";
 const useSignup = ()=>{
 
     const [loading,setLoading] = useState(false);

@@ -30,7 +30,6 @@ const ExperienceCard = ({data}) => {
         setPdfModalOpen(true);
       }
     }
-    console.log(data)
     return (
         <div className={styles.experience_card}>
             <div id={styles.student_details}>

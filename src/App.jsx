@@ -7,7 +7,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './context/AuthContext';
 function App() {
   const { authUser } = useAuthContext();
-  console.log(authUser);
   return (
     <div>
       <Routes>

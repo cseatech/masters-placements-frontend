@@ -13,7 +13,6 @@ const Company = ({name}) => {
             onClick = {()=>{
                 setSelectedType("All");
                 setSelectedCompany(name);
-                console.log(name);
             }}>
             <p className="text-white">{name}</p>
         </div>

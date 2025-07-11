@@ -13,8 +13,6 @@ const Post = () => {
     const [alertDesc, setAlertDesc] = useState("");
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        console.log(input);
-
         const res = checkError(input);
         if(!res) return;
 
@@ -81,16 +79,13 @@ function checkError(input){
         if(alertDesc == "Please upload a valid PDF file.") setShowAlert(false);
         const reader = new FileReader();
         reader.onloadend = () => {
-          // setPdfBase64(reader.result); // This will be data:application/pdf;base64,...
           const base64PDF = reader.result;
           setInput({...input,file:base64PDF});
-          console.log(base64PDF);
         };
         reader.readAsDataURL(file);
       } else {
         setShowAlert(true);
         setAlertDesc("Please upload a valid PDF file.");
-        // alert("Please upload a valid PDF file.");
       }
         
     }

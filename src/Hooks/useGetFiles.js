@@ -5,16 +5,11 @@ import { useEffect, useState } from "react"
 const useGetFiles = (company) => {
     const [loading,setLoading] = useState(false);
     const [files,setFiles] = useState([]);
-    // const {selectedCompany} = useCompany();
-    // const {selectedType} = useTypes();
-    console.log("hk", company)
     useEffect(()=>{
         const getfiles = async()=> {
             setLoading(true);
-            console.log("eughu")
             try{
                 let url = import.meta.env.VITE_APP_SERVER_URL+"/api/experiences/all-experiences/";
-                console.log(url)
                 if(company != 'All' && company != null) url = url + company;
                 const res = await fetch(url);
                 const data = await res.json();
@@ -26,9 +21,7 @@ const useGetFiles = (company) => {
                 setLoading(false);
             }
         }
-        console.log("eiatkhjk")
         getfiles();
-        console.log("egihkj")
     },[company])
 
     return {loading,files}
@@ -39,7 +32,6 @@ export const useGetUnverifiedFiles = () => {
     const [files,setFiles] = useState([]);
 
     useEffect(()=>{
-        console.log("eiatkhjk")
         const getfiles = async()=> {
             setLoading(true);
             try {

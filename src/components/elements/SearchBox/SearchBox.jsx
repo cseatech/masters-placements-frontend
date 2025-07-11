@@ -19,7 +19,6 @@ const SearchBox = () => {
         const searchCompany = companiesName.find(
             (company)=>company.toLowerCase().includes(search.toLowerCase())
         );
-        console.log(searchCompany, "dskgjkl")
         if(!searchCompany) return;
         else{
             setSelectedCompany(searchCompany);

@@ -10,7 +10,6 @@ const AdminVerify = () => {
     const { authUser, setAuthUser } = useAuthContext();
     const handleLogout = () => {
         setAuthUser(null);
-        console.log(authUser);
         localStorage.removeItem('admins');
         navigate('/admin-login');
     }

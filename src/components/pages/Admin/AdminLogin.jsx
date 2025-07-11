@@ -10,8 +10,6 @@ const AdminLogin = () => {
     const navigate = useNavigate();
     const handleLogin = async (e)=> {
         e.preventDefault();
-        
-        console.log(username, password);
         try {
             const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+"/api/users/login-admin",{
                 method: "POST",
@@ -29,17 +27,12 @@ const AdminLogin = () => {
                 setError(true);
                 setUsername("");
                 setPassword("");
-                console.log("bnjbjbj")
                 return;
             }else {
                 const token = data["token"];
-                console.log(token);
-                localStorage.setItem('hu', 'oj')
                 localStorage.setItem('token', token);
                 localStorage.setItem("admins",JSON.stringify(data))
                 setAuthUser(data);
-                console.log("ewfjkbhj");
-                // navigate('/admin-verify');
             }
         } catch(e) {
 
