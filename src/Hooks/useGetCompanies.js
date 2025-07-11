@@ -10,7 +10,7 @@ const useGetCompanies = () => {
             setLoading(true);
 
             try{
-                const res = await fetch('http://localhost:5000/api/experiences/companies');
+                const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+'/api/experiences/companies');
 
                 const data = await res.json();
                 console.log(data);

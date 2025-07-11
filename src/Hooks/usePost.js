@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-
+import { Alert } from "antd";
 const useSignup = ()=>{
 
     const [loading,setLoading] = useState(false);
@@ -11,7 +11,7 @@ const useSignup = ()=>{
             setLoading(true);
 
             try{
-                const res = await fetch('http://localhost:5000/api/experiences/add-experience',{
+                const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+'/api/experiences/add-experience',{
                     method:"POST",
                     headers:{
                         "Content-Type":"application/json"
@@ -19,12 +19,12 @@ const useSignup = ()=>{
                     body:JSON.stringify({name,email,year,company,linkedin,type,file})
                 })
 
-                if(res.status == 200) alert("Experience added successfully!");
                 const data = await res.json();
 
                 if(data.error){
                     throw new Error(data.error);
                 }
+                if(res.status == 200) return true;
             }
             catch(error){
                 console.log(error);

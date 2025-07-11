@@ -6,13 +6,7 @@ import { useAuthContext } from "../../../context/AuthContext";
 import ExperienceCard from "./ExperienceCard";
 import useGetFiles from "../../../Hooks/useGetFiles";
 import useCompany from "../../../zustand/useCompany";
-const dispFiles = (files) => {
-    return files.map((data,index) => {
-        return (
-            <ExperienceCard key={index} data={data} />
-        )
-    })
-}
+
 const Experience = () => {
     const { selectedType, setSelectedType } = useTypes();
     const { selectedCompany } = useCompany();
@@ -20,6 +14,19 @@ const Experience = () => {
     console.log("jrbjk")
     const { loading, files } = useGetFiles(selectedCompany);
         console.log("kgkj", files, loading)
+    const dispFiles = (files) => {
+        if(files.length == 0) return (
+            <div style={{display: 'flex', justifyContent: 'center', width: '100%', height: '400px', alignItems: 'center', flexDirection: 'column', gap: '1rem', paddingTop: '15px'}}>
+                <div style={{height: "160px"}}><img src="src\assets\images\empty.png" className={styles.floating_box} width="200"></img></div>
+                <div style={{color: 'white'}}>No {selectedType != 'All' && selectedType} experiences available yet!</div>
+            </div>
+        );
+        return files.map((data,index) => {
+            return (
+                <ExperienceCard key={index} data={data} />
+            )
+        })
+    }
     return (
         <div>
             <Navbar />
@@ -36,7 +43,7 @@ const Experience = () => {
                     <div className={styles.types}>
                         {types.map((type, index) => (
                             <div className={`rounded-[10px] px-5 py-1 w-auto items-center 
-                            ${type.title === selectedType ? 'bg-[#0880ff] text-white' : 'bg-[#dbdbdb]'}`} key={index}>
+                            ${type.title === selectedType ? 'bg-[#895c95] text-white' : 'bg-[#292d33] text-white font-2 border-2 border-white hover:bg-[#400051]'}`} key={index}>
                                 <button
                                     onClick={() => {setSelectedType(type.title);
                                         console.log(type.title);

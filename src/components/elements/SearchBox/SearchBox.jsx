@@ -30,12 +30,12 @@ const SearchBox = () => {
     return (
         <div className={styles.search_box_container}>
             <form className={styles.search_box} onSubmit={handleSubmit}>
-                <div>
+                
                     <input className={styles.search_box_input} 
                     value={search} onChange={(e)=>setSearch(e.target.value)}placeholder="Enter the company name"></input>
-                </div>
+                
                 <div>
-                    <button className={styles.search_box_button} ><FaSearch size={32} color="grey"/></button>
+                    <button className={styles.search_box_button} ><FaSearch size={25} color="grey"/></button>
                 </div>
             </form>
         </div>

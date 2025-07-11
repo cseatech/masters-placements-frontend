@@ -4,7 +4,7 @@ import { TiTick } from 'react-icons/ti';
 import { FaLinkedinIn } from "react-icons/fa6";
 import { getStartedCards, PracticeCards, designersCards } from '../../../constants';
 import { Footer, Accordion } from '../../elements';
-import { Interview, CSEALogo } from '../../../assets';
+import { Interview, CSEA } from '../../../assets';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../../elements'
 
@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.header_text}>
-        <h3>CSEA Placement Experiences</h3>
+        <h3>Masters Placement Experiences</h3>
         <h2>One stop web portal for enhancing your placement preparation!</h2>
         <h2>Interview Experiences of ambitious students from College of Engineering Guindy, curated into a website for your own benefit.</h2>
       </div>
@@ -28,13 +28,12 @@ const About = () => {
     <div className={styles.about_wrapper}>
       <div className={styles.about_left}>
         <motion.img animate={{ y: [0, 50, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }} src={CSEALogo} alt='Home page Logo' />
+          transition={{ duration: 2.5, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }} src={CSEA} alt='Home page Logo' />
       </div>
       <div className={styles.about_right}>
         <div className={styles.about_titles}>
           <div className={styles.about_title}>
             <p>Learn more about us</p>
-            <p></p>
           </div>
           <p className={styles.about_csea}>CSEA CEG</p>
         </div>
@@ -71,7 +70,7 @@ const GetStarted = () => {
               <h3>{card.title}</h3>
               <p>{card.description}</p>
               <div lassName={styles.getStarted_card_btn}>
-                <button onClick={()=>{navigate(`/${card.link}`)}}>Explore</button>
+                <button onClick={()=>{navigate(`/${card.link}`); window.scrollTo(0, 0);}}>Explore</button>
               </div>
             </div>
           </motion.div>
@@ -105,14 +104,14 @@ const Designers = () => {
         <div className={styles.designers_title}>
           <p><span></span>&nbsp;The team&nbsp;<span></span></p>
         </div>
-        <h3>Developed by</h3>
+        <h3>Designed and Developed by</h3>
       </div>
       <div className={styles.designers_content}>
         {designersCards.map((card, index) => (
           <div className={styles.designers_card} key={index}>
             <h3>{card.name}</h3>
             <h4>{card.year}</h4>
-            <button><FaLinkedinIn /></button>
+            <a href={card.link}><FaLinkedinIn /></a>
           </div>
         ))}
       </div>
@@ -121,6 +120,7 @@ const Designers = () => {
 }
 
 function Home() {
+  console.log(window.location.pathname);
   return (
     <div>
       <Navbar />

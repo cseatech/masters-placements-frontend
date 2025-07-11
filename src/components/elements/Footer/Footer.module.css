@@ -1,6 +1,6 @@
 .container {
     padding: 2.5rem;
-    background-color: #5e658d;
+    background-color: #895c95;
 }
 
 .wrapper {
@@ -15,7 +15,6 @@
     margin-bottom: 1rem;
     color: #fff;
     font-weight: 600;
-    font-family: 'Edu TAS Beginner', cursive;
 }
 
 .footer_icons {
@@ -25,12 +24,12 @@
 
 .footer_icon {
     margin: 0 0.5rem;
-    background-color: #5e658d;
-    border: 1.5px solid #c9ada7;
+    background-color: #895c95;
+    border: 1.5px solid white;
     padding: 0.65rem;
     font-size: 1.25rem;
     border-radius: 50%;
-    color: #c9ada7;
+    color: white;
     text-align: center;
 
 }
@@ -44,12 +43,10 @@
 }
 
 .contact h2, .links h3, .experience h3 {
-    font-size: 2.5rem;
-    color: #bf95b6;
+    font-size: 2rem;
+    color: white;
     font-weight: 600;
-    font-family: 'Edu TAS Beginner', cursive;
     margin-bottom: 1rem;
-    letter-spacing: 1.2px;
     display: flex;
     justify-content: center;
 }
@@ -57,7 +54,6 @@
 .email h3, .email a, .phno h3, .phno p, .links p {
     color: white;
     margin: 1rem 0;
-    font-family: 'Nunito', sans-serif;
     display: flex;
     justify-content: center;
 }
@@ -65,7 +61,6 @@
 .email h3, .phno h3 {
     font-size: 1.75rem;
     font-weight: 600;
-    font-family: 'Edu TAS Beginner', cursive;
 }
 
 .email a {
@@ -83,7 +78,8 @@
 }
 
 .email svg, .phno svg {
-    color: #bf95b6;
+    margin-top:0.5px;
+    color: white;
 }
 
 .links p:hover {
@@ -97,17 +93,17 @@
 }
 
 .experience button {
-    background-color: #bf95b6;
+    background-color: white;
     padding: 1rem 2rem;
     font-size: 1.35rem;
     margin: 1rem 0;
-    color: white;
+    color: #895c95;
     cursor: pointer;
     outline: none;
     border: none;
     border-radius: 27px;
     letter-spacing: 1.3px;
-    
+    font-weight: bolder;
 }
 
 
@@ -128,7 +124,8 @@
 }
 
 .copyrights span {
-    color: #bf95b6;
+    color: white;
+    font-weight: bolder;
 }
 
 @media only screen and (max-width: 768px) {

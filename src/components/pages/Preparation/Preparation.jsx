@@ -9,9 +9,18 @@ const Preparation = () => {
         "Practise coding",
         "Brush up CS subjects",
         "Learn Aptitude",
-        "sample",
+        "Prepare specifically",
+        "Getting ready for interview"
     ];
 
+    const contentTitle = [
+        "Resume Building",
+        "Practice Coding",
+        "CS subjects",
+        "Aptitude Questions",
+        "Company specific preparation",
+        "Interviews"
+    ]
     const [currentStage, setCurrentStage] = useState(0);
 
     useEffect(() => {
@@ -74,7 +83,20 @@ const Preparation = () => {
 
             <div className={styles['content-wrapper']}>
                 <div className={styles.content}>
-                    <h2 className='text-3xl py-5'>{stages[currentStage]}</h2>
+                    <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}><h2 className='text-3xl py-5'>{contentTitle[currentStage]}</h2></div>
+                    {currentStage === 0 && (
+                        <ul>
+                            <li>Make sure you can answer any questions raised from your resume.</li>
+                            <li>Things to include: Full name, Email ID, phone number</li>
+                            <li>Professional social sites link(optional) like LinkedIn, codechef..</li>
+                            <li>Education (reverse order)</li>
+                            <li>Internship (if any)</li>
+                            <li>Projects, Extra curricular activities, Skills (programming languages or technologies known)</li>
+                            <li>Hobbies</li>
+                            <li>Resume should be free from mistakes.</li>
+                            <li>Try not to exceed a page(max of 2 pages).</li>
+                        </ul>
+                    )}
                     {currentStage === 1 && (
                         <ul>
                             <li>Focus on Data structures and Algorithms.</li>
@@ -95,6 +117,14 @@ const Preparation = () => {
                             <li>Work on your logical reasoning.</li>
                             <li>Prepare for aptitude tests (quantitative, logical, verbal).</li>
                             <li>Use resources like IndiaBix or Testbook for practice.</li>
+                        </ul>
+                    )}
+                    {currentStage === 4 && (
+                        <ul>
+                            <li>Know about the company you are attending.</li>
+                            <li>Make sure you are aware of the role you are interviewed for.</li>
+                            <li>Try questions asked previously in the company. Company wise coding questions are available in GeeksForGeeks, InterviewBit, Leetcode etc.</li>
+                            <li>Have a look at the interview experiences of the company.</li>
                         </ul>
                     )}
                 </div>

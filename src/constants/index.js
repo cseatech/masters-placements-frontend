@@ -23,28 +23,39 @@ export const types = [
 
 export const navLinks = [
     {
-        id: "about",
+        id: "/",
+        title: "Home",
+        location: "remaining",
+    },
+    {
+        id: "/about",
         title: "About",
+        location: "home",
     },
     {
-        id: "preparation",
+        id: "/preparation",
         title: "Preparation",
+        location: "all",
     },
     {
-        id: "experience",
-        title: "Experience",
+        id: "/experience",
+        title: "Experiences",
+        location: "all",
     },
     {
-        id: "post",
+        id: "/post",
         title: "Post",
+        location: "all",
     },
     {
-        id: "faq",
+        id: "/faq",
         title: "FAQ",
+        location: "home",
     },
     {
-        id: "contact",
+        id: "/contact",
         title: "Contact",
+        location: "home",
     },
 ];
 
@@ -118,11 +129,7 @@ export const PracticeCards = [
 ];
 
 export const designersCards = [
-    { name: 'Person 1', year: '2018 - 2022', link: '' },
-    { name: 'Person 2', year: '2018 - 2022', link: '' },
-    { name: 'Person 3', year: '2018 - 2022', link: '' },
-    { name: 'Person 4', year: '2018 - 2022', link: '' },
-    { name: 'Person 5', year: '2018 - 2022', link: '' },
-    { name: 'Person 6', year: '2020 - 2024', link: '' },
-    { name: 'Person 7', year: '2020 - 2024', link: '' },
+    { name: 'Selva Rathinam M', year: '2021 - 2025', link: 'https://www.linkedin.com/in/selvarathinam-m/' },
+    { name: 'Ragul S', year: '2021 - 2025', link: 'https://www.linkedin.com/in/ragul-s-301b40252/' },
+    { name: 'Narendran G', year: '2021 - 2025', link: 'https://www.linkedin.com/in/narendran-g/' },
 ];

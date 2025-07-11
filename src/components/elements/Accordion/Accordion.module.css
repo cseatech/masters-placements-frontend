@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #292d33;
 }
 
 .wrapper {
@@ -15,14 +16,15 @@
 }
 
 .header h3 {
-    font-family: 'Edu TAS Beginner', cursive;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     margin-top: 1rem;
+    color: #e3d5e7;
 }
 
 .acc_title {
     font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -33,7 +35,7 @@
 .acc_title p {
     font-size: 1.5rem;
     text-transform: uppercase;
-    color: #7678ed;
+    color: #895c95;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,8 +44,8 @@
 .acc_title p span {
     display: inline-block;
     width: 5rem;
-    height: 2px;
-    background-color: #7678ed;
+    height: 2.3px;
+    background-color: #895c95;
 }
 
 .label {
@@ -53,10 +55,11 @@
     justify-content: space-between;
     cursor: pointer;
     padding: 0.65rem;
+    color: white;
 }
 
 .label:hover {
-    color: #7678ed;
+    color: #e3d5e7;
     transition: all 200ms;
 }
 
@@ -65,7 +68,7 @@
 }
 
 .label p:nth-child(2) svg {
-    background-color: #7678ed;
+    background-color: #895c95;
     color: white;
 }
 
@@ -75,7 +78,7 @@
 
 .content {
     padding: 0.65rem;
-    color: #000000b0;
+    color: white;
     font-size: 1rem;
     font-family: 'Nunito', sans-serif;
     line-height: 25px;

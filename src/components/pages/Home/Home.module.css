@@ -1,6 +1,6 @@
 .container {
     padding: 4rem;
-    background-color: #7678ed;
+    background-color: #292d33;
 }
 
 .header {
@@ -25,6 +25,7 @@
 }
 
 .header_text h3 {
+    color: #e3d5e7;
     font-size: 4.5rem;
     letter-spacing: 2px;
 }
@@ -38,11 +39,11 @@
 
 .header, .header_text, .header_text h3,
 .header_text h2, .header_img {
-    background-color: #7678ed;
+    background-color: #292d33;
 }
 
 .header_img img {
-    background-color: #7678ed;
+    background-color: #292d33;
     width: 80%;
 }
 
@@ -52,40 +53,42 @@
     display: flex;
     padding: 3.5rem;
     flex-direction: row;
+    background-color: #292d33;
 }
 
 .about_title {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .about_title p:nth-child(1) {
     font-size: 1.45rem;
     text-transform: uppercase;
-    color: #7678ed;
-    font-weight: 500;
+    color: #895c95;
+    font-weight: bolder;
     margin: 1rem 0;
 }
 
 .about_title p:nth-child(2) {
     width: 2rem;
     height: 2px;
-    background-color: #7678ed;
+    background-color: #292d33;
     margin-left: 0.5rem;
 }
 
 .about_csea {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    font-family: 'Edu TAS Beginner', cursive;
     font-weight: 500;
-    color: rgb(43, 44, 90);
+    color: #e3d5e7;
 }
 
 .about_desc {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     line-height: 25px;
+    color: white;
 }
 
 .about_list {
@@ -96,7 +99,7 @@
 
 .about_list li {
     display: flex;
-    color: #7678ed;
+    color: #895c95;
     line-height: 40px;
     font-size: 1.5rem;
     border-top: 1px solid grey;
@@ -104,7 +107,7 @@
 }
 
 .about_list li:hover {
-    color: #36376e;
+    color: #400051;
     transition: all 500ms;
 }
 
@@ -113,7 +116,7 @@
 }
 
 .about_list span {
-    color: black;
+    color: white;
     margin-left: 0.5rem;
     font-size: 1rem;
 }
@@ -137,8 +140,8 @@
 .about_right button {
     margin-top: 1.5rem;
     padding: 1rem 3rem;
-    border-radius: 50px;
-    background-color: #7678ed;
+    border-radius: 20px;
+    background-color: #895c95;
     color: white;
     outline: none;
     border: none;
@@ -147,13 +150,14 @@
 }
 
 .about_right button:hover {
-    background-color: #4b4da3;
+    background-color: #400051;
     transition: all 300ms;
 }
 
 .getStarted_container {
     padding: 3rem;
     overflow:hidden;
+    background-color: #292d33;
 }
 
 .getStarted_titles, .designers_titles {
@@ -177,7 +181,8 @@
 .getStarted_title p, .designers_title p {
     font-size: 1.5rem;
     text-transform: uppercase;
-    color: #7678ed;
+    color: #895c95;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,14 +192,14 @@
     display: inline-block;
     width: 5rem;
     height: 2px;
-    background-color: #7678ed;
+    background-color: #895c95;
 }
 
 .getStarted_titles h3, .designers_titles h3 {
     margin-top: 1rem;
-    font-size: 2.25rem;
-    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 1.5rem;
     font-weight: 500;
+    color: #e3d5e7;
 }
 
 .getStarted_cards {
@@ -205,12 +210,11 @@
 }
 
 .getStarted_card {
+    background-color: #f8ebfb;
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
-    font-family: 'Nunito', sans-serif;
-    box-shadow: 15px -5px 3px -95px #00f2ff76,
-        0px 5px 30px -6px #a3edff86;
+    border-radius: 5px;
 }
 
 .getStarted_card_desc {
@@ -231,22 +235,21 @@
     padding: 0.75rem 2.5rem;
     border-radius: 25px;
     border: none;
-    background-color: #7678ed;
+    background-color: #895c95;
     color: #fff;
     font-size: 1.15rem;
     cursor: pointer;
 }
 
 .getStarted_card_desc button:hover {
-    background-color: #5b5db6;
+    background-color: #400051;
     transition: all 300ms;
 }
 
 .getStarted_card_desc h3 {
     margin-top: 1rem;
-    font-family: 'Edu TAS Beginner', cursive;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: #4b4d93;
     height: 20%;
 }
@@ -273,6 +276,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #292d33;
 }
 
 .practiceWrapper {
@@ -283,9 +287,9 @@
 }
 
 .practiceSection h3 {
-    font-family: 'Edu TAS Beginner', cursive;
+    color: #e3d5e7;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 1.5rem 0;
 }
 
@@ -293,11 +297,12 @@
     height: 9rem;
     padding: 1.1em;
     width: 50%;
-    border: 1px solid rgba(128, 128, 128, 0.5);
+    border: 1px solid #895c95;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: white;
 }
 
 .practiceTile img {
@@ -312,6 +317,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #292d33
 }
 
 .designers_content {
@@ -332,11 +338,10 @@
 }
 
 .designers_card h3 {
-    font-family: 'Edu TAS Beginner', cursive;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin: 0.75rem 0;
-    color: #5b5db6;
+    color: white;
 }
 
 .designers_card h4 {
@@ -345,11 +350,11 @@
     margin-bottom: 0.75rem;
 }
 
-.designers_card button {
+.designers_card a {
     padding: 0.75rem;
     outline: none;
-    border: 2px solid #7678ed;
-    color: #5b5db6;
+    border: 2px solid #895c95;
+    color: white;
     background-color: transparent;
     border-radius: 50%;
     font-size: 1.1rem;
@@ -357,8 +362,8 @@
     cursor: pointer;
 }
 
-.designers_card button:hover {
-    background-color: #7678ed;
+.designers_card a:hover {
+    background-color: #895c95;
     color: #fff;
     transition: all 500ms;
 }

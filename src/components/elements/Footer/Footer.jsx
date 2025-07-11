@@ -15,7 +15,7 @@ function Footer() {
                     <p>CSEA</p>
                     <div className={styles.footer_icons}>
                         {footerCards.footerSocialMedia.map((Button, index) => (
-                            <button href='' className={styles.footer_icon} key={index}>{<Button.icon />}</button>
+                            <a href={Button.link} className={styles.footer_icon} key={index}>{<Button.icon />}</a>
                         ))}
                     </div>
                 </div>

@@ -1,4 +1,6 @@
 import CSEALogo from './images/csea-logo.png';
+import CSEA from './images/csea.png';
+import CSEALogo2 from './images/csea-black.png';
 import Interview from './svg/home.svg';
 import Prepartion from './images/home/preparation.jpg'; 
 import InterviewLogo from './images/home/interview.png'; 
@@ -10,6 +12,6 @@ import Hackerrank from './images/home/hackerrank.png';
 import Leetcode from './svg/LeetCode.svg';
 
 export {
-    CSEALogo, Interview, Prepartion, Leetcode,
+    CSEALogo, CSEA, CSEALogo2, Interview, Prepartion, Leetcode,
     InterviewLogo, Expereince, GFG, CC, Hackerrank
 }

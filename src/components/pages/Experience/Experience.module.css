@@ -5,6 +5,7 @@
   min-height: 100vh;
   overflow: hidden;
   flex-direction: row;
+  background-color: #292d33;
 }
 
 /* === Left Side (Sidebar) === */
@@ -69,7 +70,7 @@
 .experience_container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 4.5rem;
   justify-content: start;
 }
 
@@ -79,4 +80,17 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+.floating_box {
+  animation: float 2s ease-in-out infinite;
 }

@@ -2,12 +2,15 @@ import styles from './Post.module.css';
 import { emptyInput, useAuthContext } from '../../../context/AuthContext';
 import useSignup from '../../../Hooks/usePost';
 import { Navbar } from '../../elements';
-
+import { Alert } from 'antd';
+import { useState, useRef } from 'react';
 const Post = () => {
-
+ const fileInputRef = useRef(null);
+ const typeRef = useRef(null);
     const {input, setInput} = useAuthContext();
     const {loading, signup} = useSignup();
-
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertDesc, setAlertDesc] = useState("");
     const handleSubmit = async (e)=>{
         e.preventDefault();
         console.log(input);
@@ -15,14 +18,67 @@ const Post = () => {
         const res = checkError(input);
         if(!res) return;
 
-        await signup(input);
+        const isSubmitted = await signup(input);
+        if(isSubmitted){
+          setShowAlert(true);
+          setAlertDesc("Experience added successfully!");
+        }
         setInput(emptyInput);
+         if (fileInputRef.current) {
+      fileInputRef.current.value = null;
     }
+        typeRef.current.value = "";
 
+    }
+function checkError(input){
+    if(!input.name){
+        setShowAlert(true);
+        setAlertDesc("Name cannot be empty");
+        // alert("Name cannot be empty");
+        return false;
+    }
+    if(!input.email){
+        setShowAlert(true);
+        setAlertDesc("Email cannot be empty");
+        return false;
+    }
+    if(!input.type){
+      setShowAlert(true);
+      setAlertDesc("Type cannot be empty");
+        // alert("Type cannot be empty");
+      return false;
+    }
+    if(!input.year){
+      setShowAlert(true);
+      setAlertDesc("Year cannot be empty");
+        // alert("Year cannot be empty");
+      return false;
+    }
+    if(!input.company){
+      setShowAlert(true);
+      setAlertDesc("Company cannot be empty");
+        // alert("Company cannot be empty");
+        return false;
+    }
+    if(!input.linkedin){
+      setShowAlert(true);
+      setAlertDesc("LinkedIn Url cannot be empty");
+        // alert("LinkedIn URL cannot be empty");
+        return false;
+    }
+    if(!input.file){
+      setShowAlert(true);
+      setAlertDesc("PDF cannot be empty");
+        // alert("PDF cannot be empty");
+        return false;
+    }
+    return true;
+}
     const handleFile = (e)=>{
       e.preventDefault();
       const file = e.target.files[0];
       if (file && file.type === "application/pdf") {
+        if(alertDesc == "Please upload a valid PDF file.") setShowAlert(false);
         const reader = new FileReader();
         reader.onloadend = () => {
           // setPdfBase64(reader.result); // This will be data:application/pdf;base64,...
@@ -32,7 +88,9 @@ const Post = () => {
         };
         reader.readAsDataURL(file);
       } else {
-        alert("Please upload a valid PDF file.");
+        setShowAlert(true);
+        setAlertDesc("Please upload a valid PDF file.");
+        // alert("Please upload a valid PDF file.");
       }
         
     }
@@ -40,9 +98,10 @@ const Post = () => {
     return (
       <div>
         <Navbar />
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center bg-[#292d33]'>
         
         <div className='flex-col items-center mt-16'>
+          {showAlert && <div className="fixed bottom-4 right-4 z-50 w-80"><Alert name="alert" description={alertDesc} type="info" style={{ color: '#895c95', backgroundColor: '#e3d5e7', fontWeight: 'bold' }} closable onClose={()=>setShowAlert(false)}/></div>}
           <div className='text-center mb-4'>
             <h1 id={styles.title} >Connect with us</h1>
             <h1 id={styles.sub_title}>Share your Experience</h1>
@@ -51,39 +110,39 @@ const Post = () => {
           <div className='flex-col'>
             <form className='flex-col space-y-7 w-full max-w-2xl' onSubmit={handleSubmit}>
 
-              <input className='py-2 px-2' placeholder='Your Name'
+              <input className='py-2 px-2 bg-[#e3d5e7]' placeholder='Your Name'
               value={input.name}
               onChange={(e)=>{setInput({...input,name:e.target.value})}}></input>
 
-              <input className='py-2 px-2' placeholder='Your Email' type='email'
+              <input className='py-2 px-2 bg-[#e3d5e7]' placeholder='Your Email' type='email'
               value={input.email}
               onChange={(e)=>{setInput({...input,email:e.target.value})}}></input>
 
-              <select className ='py-2 px-2' onChange={(e)=>{setInput({...input,type:e.target.value})}}>
-                <option value="" disabled selected>Select an employment type</option>
+              <select className ='py-2 px-2 bg-[#e3d5e7]' onChange={(e)=>{setInput({...input,type:e.target.value})}} ref={typeRef}>
+                <option value="" disabled selected hidden>Select an employment type</option>
                 <option value='Placement'>Placement</option>
                 <option value='Intern'>Intern</option>
               </select>
 
-              <input className='py-2 px-2' placeholder='Year of passing out'
+              <input className='py-2 px-2 bg-[#e3d5e7]' placeholder='Year of passing out'
               value={input.year}
               onChange={(e)=>{setInput({...input,year:e.target.value})}}></input>
 
-              <input className='py-2 px-2' placeholder='Company'
+              <input className='py-2 px-2 bg-[#e3d5e7]' placeholder='Company'
               value={input.company}
               onChange={(e)=>{setInput({...input,company:e.target.value})}}></input>
 
-              <input className='py-2 px-2' placeholder='LinkedIn URL' type='url'
+              <input className='py-2 px-2 bg-[#e3d5e7]' placeholder='LinkedIn URL' type='url'
               value={input.linkedin}
               onChange={(e)=>{setInput({...input,linkedin:e.target.value})}}></input>
   
-              <p className='text-sm text-red-600'>
+              <p className='text-sm text-[#c503fb] font-bold'>
                 * Fill with '-' if you don't have a LinkedIn profile
               </p>
 
-              <input className='py-2 px-2' type='file' onChange={handleFile}></input>
+              <input className='py-2 px-2 bg-[#e3d5e7]' type='file' onChange={handleFile} ref={fileInputRef}></input>
 
-              <p className='text-red-600'>*Please upload PDF only</p>
+              <p className='text-[#c503fb] font-bold'>*Please upload PDF only</p>
 
               <button type='submit' id={styles.btn}>Submit for review</button>
             </form>
@@ -97,34 +156,3 @@ const Post = () => {
   export default Post;
   
 
-function checkError(input){
-    if(!input.name){
-        alert("Name cannot be empty");
-        return false;
-    }
-    if(!input.email){
-        alert("Email cannot be empty");
-        return false;
-    }
-    if(!input.type){
-        alert("Type cannot be empty");
-        return false;
-    }
-    if(!input.year){
-        alert("Year cannot be empty");
-        return false;
-    }
-    if(!input.company){
-        alert("Company cannot be empty");
-        return false;
-    }
-    if(!input.linkedin){
-        alert("LinkedIn URL cannot be empty");
-        return false;
-    }
-    if(!input.file){
-        alert("PDF cannot be empty");
-        return false;
-    }
-    return true;
-}

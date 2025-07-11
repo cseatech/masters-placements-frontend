@@ -9,12 +9,11 @@ const useGetFiles = (company) => {
     // const {selectedType} = useTypes();
     console.log("hk", company)
     useEffect(()=>{
-        console.log("eiatkhjk")
         const getfiles = async()=> {
             setLoading(true);
             console.log("eughu")
             try{
-                let url = "http://localhost:5000/api/experiences/all-experiences/";
+                let url = import.meta.env.VITE_APP_SERVER_URL+"/api/experiences/all-experiences/";
                 console.log(url)
                 if(company != 'All' && company != null) url = url + company;
                 const res = await fetch(url);
@@ -33,6 +32,31 @@ const useGetFiles = (company) => {
     },[company])
 
     return {loading,files}
+}
+
+export const useGetUnverifiedFiles = () => {
+    const [loading,setLoading] = useState(false);
+    const [files,setFiles] = useState([]);
+
+    useEffect(()=>{
+        console.log("eiatkhjk")
+        const getfiles = async()=> {
+            setLoading(true);
+            try {
+                let url = import.meta.env.VITE_APP_SERVER_URL+"/api/experiences/unverified";
+                const res = await fetch(url);
+                const data = await res.json();
+                if(data.error) throw new Error(data.error);
+                setFiles(data.message);
+            } catch(error) {
+                throw new Error(error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        getfiles();
+    },[]);
+    return {loading, files};
 }
 
 export default useGetFiles;

@@ -1,14 +1,14 @@
 .progressContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    background-color: #292d33;
+    height: 100vh;
     /* overflow: hidden; */
-    margin-top:20px;
 }
 
 .timeline {
-    background: #fff;
     color: #333;
     list-style-type: none;
     border-radius: 10px;
@@ -68,15 +68,6 @@
     transform: translateY(-50%);
 }
 
-.currentStep ~ .steps::after {
-    background: #2f7b8c;
-}
-
-.completedStep ~ .steps::after {
-    background: #21d4fd; /* Color for completed steps */
-}
-
-
 #number {
     height: 40px;
     width: 40px;
@@ -95,7 +86,7 @@
     content: "";
     height: 40px;
     width: 40px;
-    background: #21d4fd;
+    background: #895c95;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -121,6 +112,7 @@
     font-size: 14px;
     font-weight: 600;
     margin-top: 10px;
+    color: #ebaffc;
 }
 
 .currentStep #number::before,
@@ -138,12 +130,13 @@
 }
 
 .currentStep #number:after {
-    background: #fff;
-    border: 2px solid #21d4fd;
+    background: #ebaffc;
+    border: 2px solid #895c95;
 }
 
 .currentStep #number {
-    color: #1b3c43;
+    color: black;
+    font-weight: bolder;
 }
 
 .content-wrapper {
@@ -155,22 +148,24 @@
     word-spacing: 7px;
     /* overflow: hidden; */
     padding:20px;
+    color: white;
     h2{
-        font-family: Lobster, sans-serif;
-        letter-spacing: 2.5px;
-        font-size: 3rem;
+        font-size: 2.1rem;
+        font-weight: bolder;
+        color: #ebaffc
     }
     ul{
-        padding-top: 20px;;
-        font-size: x-large;
-        font-family:Arial, Helvetica, sans-serif ;
+        padding-top: 20px;
+        font-size: 1.35rem;
     }
     li::before{
         content: "\2713";
         padding-right: 15px;
+        color: #ebaffc;
     }
 }
 
 .nav_arrow {
   flex-shrink: 0;
+  color: #ebaffc;
 }

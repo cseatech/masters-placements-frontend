@@ -13,7 +13,7 @@ const AdminLogin = () => {
         
         console.log(username, password);
         try {
-            const res = await fetch("http://localhost:5000/api/users/login-admin",{
+            const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+"/api/users/login-admin",{
                 method: "POST",
                 headers: {"Content-type" : "application/json"},
                 body: JSON.stringify({username,password})

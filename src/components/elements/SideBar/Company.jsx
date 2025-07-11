@@ -1,18 +1,21 @@
 import useCompany from "../../../zustand/useCompany";
+import useTypes from "../../../zustand/useTypes";
 
 const Company = ({name}) => {
 
+    const {setSelectedType} = useTypes();
     const {setSelectedCompany,selectedCompany} = useCompany();
     const isSelected = name === selectedCompany;
 
     return (
-        <div className={`flex items-center gap-x-5 hover:bg-blue-300 py-5 px-9 rounded-lg  ml-3 text-black-500
-        ${ isSelected ? "bg-[#0880ff]" : ""}`}
+        <div className={`flex items-center gap-x-5 hover:bg-[#400051] py-5 px-9 rounded-lg  ml-3 text-white-500
+        ${ isSelected ? "bg-[#895c95]" : ""}`}
             onClick = {()=>{
+                setSelectedType("All");
                 setSelectedCompany(name);
                 console.log(name);
             }}>
-            <p>{name}</p>
+            <p className="text-white">{name}</p>
         </div>
     );
 }
