@@ -1,12 +1,14 @@
-import { Navbar, ScrollWrapper } from './components/elements';
-import { Home, Preparation, Experience, Post } from './components/pages';
-import AdminLogin from './components/pages/Admin/AdminLogin'
-import AdminVerify from './components/pages/Admin/AdminVerify';
-import './App.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import AdminLogin from './components/pages/Admin/AdminLogin';
+import AdminVerify from './components/pages/Admin/AdminVerify';
+import { Home, Preparation, Experience, Post } from './components/pages';
+import { ScrollWrapper } from './components/elements';
 import { useAuthContext } from './context/AuthContext';
+import './App.css';
+
 function App() {
   const { authUser } = useAuthContext();
+  
   return (
     <div>
       <Routes>

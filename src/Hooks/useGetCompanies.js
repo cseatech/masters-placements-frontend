@@ -1,31 +1,31 @@
-import { useState,useEffect} from "react";
-import  useCompany  from "../zustand/useCompany";
+import { useState, useEffect } from "react";
+
 const useGetCompanies = () => {
-    const [loading,setLoading] = useState(false);
-    const [companiesName,setCompaniesName] = useState([]);
-    const {selectedCompany} = useCompany();
+  const [loading, setLoading] = useState(false);
+  const [companiesName, setCompaniesName] = useState([]);
 
-    useEffect(()=> {
-        const getCompanies = async () => {
-            setLoading(true);
+  useEffect(() => {
+    const getCompanies = async () => {
+      setLoading(true);
 
-            try{
-                const res = await fetch(import.meta.env.VITE_APP_SERVER_URL+'/api/experiences/companies');
+      try {
+        const res = await fetch(import.meta.env.VITE_APP_SERVER_URL + '/api/experiences/companies');
+        const data = await res.json();
+        if(data.error)
+          throw new Error(data.error);
 
-                const data = await res.json();
-                if(data.error) throw new Error(data.error);
+        setCompaniesName(data.message);
+      } catch(error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+        
+    getCompanies();
+  },[]);
 
-                setCompaniesName(data.message);
-            }catch(error){
-                console.log(error)
-            }finally{
-                setLoading(false);
-            }
-        }
-        getCompanies();
-    },[])
+  return { loading, companiesName };
+};
 
-    return {loading,companiesName};
-}
-
-export default useGetCompanies
+export default useGetCompanies;

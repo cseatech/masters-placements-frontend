@@ -1,12 +1,12 @@
-import styles from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TiTick } from 'react-icons/ti';
 import { FaLinkedinIn } from "react-icons/fa6";
 import { getStartedCards, PracticeCards, designersCards } from '../../../constants';
 import { Footer, Accordion } from '../../elements';
 import { Interview, CSEA } from '../../../assets';
-import { useNavigate } from 'react-router-dom';
-import { Navbar } from '../../elements'
+import { Navbar } from '../../elements';
+import styles from './Home.module.css';
 
 const Header = () => {
   return (
@@ -21,7 +21,7 @@ const Header = () => {
       </div>
     </div>
   );
-}
+};
 
 const About = () => {
   return (
@@ -48,7 +48,7 @@ const About = () => {
       </div>
     </div>
   );
-}
+};
 
 const GetStarted = () => {
   const navigate = useNavigate();
@@ -77,8 +77,8 @@ const GetStarted = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Practice = () => {
   return (
@@ -94,8 +94,8 @@ const Practice = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Designers = () => {
   return (
@@ -116,8 +116,8 @@ const Designers = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 function Home() {
   return (

@@ -6,15 +6,12 @@ const ScrollWrapper = () => {
   const location = useLocation();
 
   useLayoutEffect(() => {
-    if (location.pathname === '/contact') {
+    if (location.pathname === '/contact')
       window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-    }
-    else if (location.pathname === '/about') {
+    else if (location.pathname === '/about')
       window.scrollTo({ top: document.documentElement.scrollHeight*0.175, behavior: 'smooth' });
-    }
-    else if (location.pathname === '/faq') {
+    else if (location.pathname === '/faq')
       window.scrollTo({ top: document.documentElement.scrollHeight*0.55, behavior: 'smooth' });
-    }
   }, [location]);
 
   return <Home />;
